@@ -28,8 +28,7 @@ export const Button: React.FC<Props> = ({
 
   const content = (
     <div className={classes.content}>
-      <Chevron />
-      <span className={classes.label}>
+      <span className={`underline text-black`}>
         {label}
       </span>
     </div>

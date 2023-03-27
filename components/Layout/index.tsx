@@ -18,6 +18,7 @@ const Layout = ({
   children,
 }: Props): React.ReactElement => {
   return (
+    <div className="flex h-screen flex-col justify-between font-nunito">
     <React.Fragment>
       <GridProvider
         breakpoints={{
@@ -45,6 +46,7 @@ const Layout = ({
         </ModalProvider>
       </GridProvider>
     </React.Fragment>
+    </div>
   )
 }
 

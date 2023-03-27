@@ -2,8 +2,8 @@ import { CollectionConfig } from 'payload/types';
 import { publishedOnly } from '../access/publishedOnly';
 import { CallToAction } from '../blocks/CallToAction';
 import { Content } from '../blocks/Content';
+import { LLSlider } from '../blocks/LLSlider';
 import { MediaBlock } from '../blocks/Media';
-import { hero } from '../fields/hero';
 import { slugField } from '../fields/slug';
 import { regenerateStaticPage } from '../utilities/regenerateStaticPage';
 
@@ -38,12 +38,6 @@ export const Pages: CollectionConfig = {
       type: 'tabs',
       tabs: [
         {
-          label: 'Hero',
-          fields: [
-            hero,
-          ]
-        },
-        {
           label: 'Content',
           fields: [
             {
@@ -54,6 +48,7 @@ export const Pages: CollectionConfig = {
                 CallToAction,
                 Content,
                 MediaBlock,
+                LLSlider,
               ]
             }
           ]

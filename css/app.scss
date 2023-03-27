@@ -1,6 +1,11 @@
 @use './queries.scss' as *;
 @use './colors.scss' as *;
 @use './type.scss' as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto&family=Nunito&display=swap');
+
 
 :root {
   --breakpoint-xs-width : #{$breakpoint-xs-width};

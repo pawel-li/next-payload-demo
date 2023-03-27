@@ -1,19 +1,18 @@
-import { ModalToggler } from '@faceless-ui/modal';
 import Link from 'next/link';
 import React from 'react';
 import { MainMenu } from '../../payload-types';
 import { Gutter } from '../Gutter';
-import { MenuIcon } from '../icons/Menu';
 import { CMSLink } from '../Link';
 import { Logo } from '../Logo';
-import { MobileMenuModal, slug as menuModalSlug } from './MobileMenuModal';
 
 import classes from './index.module.scss';
+import { MobileMenu } from './Menu';
 
 type HeaderBarProps = {
   children?: React.ReactNode;
+  navItems?: MainMenu["navItems"]
 }
-export const HeaderBar: React.FC<HeaderBarProps> = ({ children }) => {
+export const HeaderBar: React.FC<HeaderBarProps> = ({ children, navItems }) => {
   return (
     <header className={classes.header}>
       <Gutter className={classes.wrap}>
@@ -23,9 +22,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ children }) => {
 
         {children}
 
-        <ModalToggler slug={menuModalSlug} className={classes.mobileMenuToggler}>
-          <MenuIcon />
-        </ModalToggler>
+        <MobileMenu navItems={navItems}/>
       </Gutter>
     </header>
   )
@@ -36,17 +33,15 @@ export const Header: React.FC<{ mainMenu: MainMenu }> = ({ mainMenu }) => {
 
   return (
     <>
-      <HeaderBar>
+      <HeaderBar navItems={navItems}>
         <nav className={classes.nav}>
           {navItems.map(({ link }, i) => {
             return (
-              <CMSLink key={i} {...link} />
+              <CMSLink key={i} {...link} className="font-nunito font-p-1 font-medium text-slate-600 hover:text-black hover:underline dark:text-gray-100 sm:p-4" />
             )
           })}
         </nav>
       </HeaderBar>
-
-      <MobileMenuModal navItems={navItems} />
     </>
   )
 }

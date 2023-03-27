@@ -17,28 +17,7 @@ export interface Config {
 }
 export interface Page {
   id: string;
-  title: string;
-  hero: {
-    type: 'highImpact' | 'mediumImpact' | 'lowImpact';
-    richText: {
-      [k: string]: unknown;
-    }[];
-    links: {
-      link: {
-        type?: 'reference' | 'custom';
-        newTab?: boolean;
-        reference: {
-          value: string | Page;
-          relationTo: 'pages';
-        };
-        url: string;
-        label: string;
-        appearance?: 'default' | 'primary' | 'secondary';
-      };
-      id?: string;
-    }[];
-    media: string | Media;
-  };
+  title?: string;
   layout: (
     | {
         ctaBackgroundColor?: 'white' | 'black';
@@ -131,6 +110,29 @@ export interface Page {
         id?: string;
         blockName?: string;
         blockType: 'mediaBlock';
+      }
+      | {
+        llSliderBackgroundColor?: 'white' | 'black';
+        richText: {
+          [k: string]: unknown;
+        }[];
+        links: {
+          link: {
+            type?: 'reference' | 'custom';
+            newTab?: boolean;
+            reference: {
+              value: string | Page;
+              relationTo: 'pages';
+            };
+            url: string;
+            label: string;
+            appearance?: 'primary' | 'secondary';
+          };
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'llSliderBlock';
       }
   )[];
   slug?: string;
