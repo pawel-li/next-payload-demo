@@ -24,7 +24,6 @@ const Page = async ({ params: { slug } }) => {
   return (
     <React.Fragment>
       <AdminBar adminBarProps={{ collection: 'pages', id: page.id }} />
-      <Hero {...page.hero} />
       <Blocks blocks={page.layout} />
     </React.Fragment>
   )
