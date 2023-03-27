@@ -2,7 +2,6 @@ import React from 'react';
 import { notFound } from 'next/navigation'
 import getPayload from '../../../payload';
 import Blocks from '../../../components/Blocks';
-import { Hero } from '../../../components/Hero';
 import { AdminBar } from '../../../components/AdminBar';
 
 const Page = async ({ params: { slug } }) => {
