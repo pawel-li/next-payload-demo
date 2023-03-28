@@ -1,15 +1,11 @@
 import React from 'react';
-import { Cell, Grid } from '@faceless-ui/css-grid';
 import { Page } from '../../../payload-types';
-import { BackgroundColor } from '../../BackgroundColor';
-import { Gutter } from '../../Gutter';
-import { CMSLink } from '../../Link';
 import RichText from '../../RichText';
-
-import classes from './index.module.scss';
+import { title } from 'process';
+import { SectionContainer } from '../../SectionContainer';
 
 type Props = {
-  ctaBackgroundColor?: 'white' | 'black';
+  title: string;
   richText: {
     [k: string]: unknown;
   }[];
@@ -30,34 +26,19 @@ type Props = {
   blockName?: string;
   blockType: 'cta';
 }
-export const CallToActionBlock: React.FC<Props> = ({ ctaBackgroundColor, links, richText }) => {
-  const oppositeBackgroundColor = ctaBackgroundColor === 'white' ? 'black' : 'white';
+export const CallToActionBlock: React.FC<Props> = ({ title, links, richText }) => {
 
   return (
-    <Gutter>
-      <BackgroundColor color={oppositeBackgroundColor}>
-        <div className={classes.callToAction}>
-          <Grid>
-            <Cell cols={8} colsL={7} colsM={12}>
-              <div>
-                <RichText className={classes.richText} content={richText} />
-              </div>
-            </Cell>
-            <Cell start={10} cols={3} startL={9} colsL={4} startM={1} colsM={12}>
-              <div className={classes.linkGroup}>
-                {(links || []).map(({ link }, i) => {
-                  return (
-                    <CMSLink
-                      key={i}
-                      {...link}
-                    />
-                  )
-                })}
-              </div>
-            </Cell>
-          </Grid>
-        </div>
-      </BackgroundColor>
-    </Gutter>
+    <SectionContainer>
+      <div className="my-10 md:my-20">
+        <h1 className={`mt-6 font-sans text-4xl font-medium tracking-tight text-black dark:text-white`}>
+          {title}
+        </h1>
+        <RichText
+          content={richText}
+          className="my-10 text-lg font-light text-slate-400 lg:text-2xl dark:text-slate-300"
+        />
+      </div>
+    </SectionContainer>
   )
 }

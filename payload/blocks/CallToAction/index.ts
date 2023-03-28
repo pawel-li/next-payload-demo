@@ -10,7 +10,11 @@ export const CallToAction: Block = {
     plural: 'Calls to Action',
   },
   fields: [
-    backgroundColor({ overrides: { name: 'ctaBackgroundColor' } }),
+    {
+      name: 'Title',
+      type: 'text',
+      required: false
+    },
     richText(),
     linkGroup({
       appearances: ['primary', 'secondary'],

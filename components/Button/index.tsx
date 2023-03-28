@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import React, { ElementType } from 'react';
 import { useBackgroundColor } from '../BackgroundColor';
-import { Chevron } from '../icons/Chevron';
-import classes from './index.module.scss';
 
 export type Props = {
   label?: string
@@ -22,16 +20,13 @@ export const Button: React.FC<Props> = ({
   appearance,
   className: classNameFromProps
 }) => {
-  const backgroundColor = useBackgroundColor();
   const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {};
-  const className = [classNameFromProps, classes[`appearance--${appearance}`], classes[`${appearance}--${backgroundColor}`], classes.button].filter(Boolean).join(' ');
+  const className = [classNameFromProps].filter(Boolean).join(' ');
 
   const content = (
-    <div className={classes.content}>
       <span className={`underline text-black`}>
         {label}
       </span>
-    </div>
   )
 
   if (el === 'link') {

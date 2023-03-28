@@ -45,7 +45,7 @@ const Swiperjs = ({ slides }) => {
       {slides.map((slide, i) =>
         <SwiperSlide key={i}>
           <div className="py-32 mt-6 bg-white">
-          <Gutter>
+          <SectionContainer>
               <h1
                 className="mt-6 font-sans text-4xl font-medium tracking-tight text-black dark:text-white"
                 data-swiper-parallax="-300"
@@ -58,7 +58,7 @@ const Swiperjs = ({ slides }) => {
                   {slide.sub_title}
                 </p>
               </div>
-            </Gutter>
+            </SectionContainer>
           </div>
         </SwiperSlide>
       )}

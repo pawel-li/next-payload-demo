@@ -20,7 +20,6 @@ export interface Page {
   title?: string;
   layout: (
     | {
-        ctaBackgroundColor?: 'white' | 'black';
         richText: {
           [k: string]: unknown;
         }[];

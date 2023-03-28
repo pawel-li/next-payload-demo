@@ -41,7 +41,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ navItems }) => {
           {navItems?.map(({ link }, i) => {
             return (
               <div key={i} className="py-8">
-                <CMSLink key={i} {...link} className="font-nunito font-p-1 font-medium text-slate-600 hover:text-black hover:underline dark:text-gray-100 sm:p-4" />
+                <CMSLink key={i} {...link} className="font-nunito font-p-1 font-medium text-slate-600 hover:text-black hover:underline dark:text-gray-100" />
               </div>
             )
           })}
