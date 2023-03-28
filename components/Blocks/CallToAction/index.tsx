@@ -36,16 +36,13 @@ export const CallToActionBlock: React.FC<Props> = ({ ctaBackgroundColor, links, 
   return (
     <Gutter>
       <BackgroundColor color={oppositeBackgroundColor}>
-        <div
-          className={classes.callToAction}
-        >
+        <div className={classes.callToAction}>
           <Grid>
             <Cell cols={8} colsL={7} colsM={12}>
               <div>
                 <RichText className={classes.richText} content={richText} />
               </div>
             </Cell>
-
             <Cell start={10} cols={3} startL={9} colsL={4} startM={1} colsM={12}>
               <div className={classes.linkGroup}>
                 {(links || []).map(({ link }, i) => {
