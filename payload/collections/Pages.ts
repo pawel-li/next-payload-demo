@@ -2,6 +2,7 @@ import { CollectionConfig } from 'payload/types';
 import { publishedOnly } from '../access/publishedOnly';
 import { CallToAction } from '../blocks/CallToAction';
 import { Content } from '../blocks/Content';
+import { LLRow } from '../blocks/LLRow';
 import { LLSlider } from '../blocks/LLSlider';
 import { MediaBlock } from '../blocks/Media';
 import { slugField } from '../fields/slug';
@@ -49,6 +50,7 @@ export const Pages: CollectionConfig = {
                 Content,
                 MediaBlock,
                 LLSlider,
+                LLRow
               ]
             }
           ]

@@ -4,6 +4,7 @@ import { GridProvider } from '@faceless-ui/css-grid';
 import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 import React from 'react';
 import { Header } from '../Header';
+import { Footer } from '../Footer';
 import { MainMenu } from '../../payload-types';
 import cssVariables from '../../cssVariables';
 import '../../css/app.scss';
@@ -43,6 +44,7 @@ const Layout = ({
           <Header mainMenu={mainMenu} />
           {children}
           <ModalContainer />
+          <Footer />
         </ModalProvider>
       </GridProvider>
     </React.Fragment>

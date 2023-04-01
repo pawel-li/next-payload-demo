@@ -3,9 +3,10 @@ import { Page } from '../../../payload-types';
 import RichText from '../../RichText';
 import { title } from 'process';
 import { SectionContainer } from '../../SectionContainer';
+import { CMSLink } from '../../Link';
 
 type Props = {
-  title: string;
+  Title: string;
   richText: {
     [k: string]: unknown;
   }[];
@@ -19,6 +20,7 @@ type Props = {
       };
       url: string;
       label: string;
+      appearance?: 'primary' | 'secondary';
     };
     id?: string;
   }[];
@@ -26,18 +28,20 @@ type Props = {
   blockName?: string;
   blockType: 'cta';
 }
-export const CallToActionBlock: React.FC<Props> = ({ title, links, richText }) => {
-
+export const CallToActionBlock: React.FC<Props> = ({ Title, links, richText }) => {
   return (
     <SectionContainer>
       <div className="my-10 md:my-20">
         <h1 className={`mt-6 font-sans text-4xl font-medium tracking-tight text-black dark:text-white`}>
-          {title}
+          {Title}
         </h1>
         <RichText
           content={richText}
           className="my-10 text-lg font-light text-slate-400 lg:text-2xl dark:text-slate-300"
         />
+        <div className="flex">
+          {links.map((link, i) => <CMSLink key={i} {...link} className="font-nunito font-p-1 ml-4 font-medium text-slate-600 hover:text-black hover:underline dark:text-gray-100" />)}
+        </div>
       </div>
     </SectionContainer>
   )

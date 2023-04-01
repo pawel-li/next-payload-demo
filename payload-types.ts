@@ -133,6 +133,32 @@ export interface Page {
         blockName?: string;
         blockType: 'llSliderBlock';
       }
+      | {
+        cards: {
+          title: string;
+          richText: {
+            [k: string]: unknown;
+          }[];
+          links: {
+            link: {
+              type?: 'reference' | 'custom';
+              newTab?: boolean;
+              reference: {
+                value: string | Page;
+                relationTo: 'pages';
+              };
+              url: string;
+              label: string;
+              appearance?: 'primary' | 'secondary';
+            };
+            id?: string;
+          }[];
+          id?: string;
+        }[],
+        id?: string;
+        blockName?: string;
+        blockType: 'llRowBlock';
+      }
   )[];
   slug?: string;
   createdAt: string;

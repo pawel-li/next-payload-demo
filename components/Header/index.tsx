@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { MainMenu } from '../../payload-types';
+
 import { CMSLink } from '../Link';
 import { Logo } from '../Logo';
-import { SectionContainer } from '../SectionContainer';
+import { MainMenu } from '../../payload-types';
 import { MobileMenu } from './Menu';
+import { SectionContainer } from '../SectionContainer';
 
 type HeaderBarProps = {
   children?: React.ReactNode;
@@ -21,8 +22,6 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ children, navItems }) => {
   const stickNavbar = () => {
     if (window !== undefined) {
       const windowHeight = window.scrollY;
-      // window height changed for the demo
-      // eslint-disable-next-line no-unused-expressions
       windowHeight && windowHeight > 50 ? setStickyClass('shadow-[inset_0_-1px_0_rgba(25,25,60,0.08)] py-4') : setStickyClass('shadow-none border-transparent py-5');
     }
   };

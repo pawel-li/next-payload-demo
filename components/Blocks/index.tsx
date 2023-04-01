@@ -7,6 +7,7 @@ import { BackgroundColor } from '../BackgroundColor';
 import { VerticalPaddingOptions } from '../VerticalPadding';
 import { CallToActionBlock } from './CallToAction';
 import { ContentBlock } from './Content';
+import { LLRowBlock } from './LLRow';
 import { LLSliderBlock } from './LLSlider';
 import { MediaBlock } from './MediaBlock';
 
@@ -14,7 +15,8 @@ const blockComponents = {
   cta: CallToActionBlock,
   content: ContentBlock,
   mediaBlock: MediaBlock,
-  llSliderBlock: LLSliderBlock
+  llSliderBlock: LLSliderBlock,
+  llRowBlock: LLRowBlock
 }
 
 const Blocks: React.FC<{
