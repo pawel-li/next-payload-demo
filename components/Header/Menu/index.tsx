@@ -36,12 +36,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ navItems }) => {
         </div>
       </button>
       <div className={`absolute top-16 mt-2 left-0 z-50 h-[100vh] w-full transform duration-300 ease-in-out bg-white dark:bg-neutral-900 ${navShow ? 'translate-y-0' : 'translate-y-full'
-          }`}>
+        }`}>
         <nav className="fixed mt-8 w-full mx-10">
           {navItems?.map(({ link }, i) => {
             return (
               <div key={i} className="py-8">
-                <CMSLink key={i} {...link} className="font-nunito font-p-1 font-medium text-slate-600 hover:text-black hover:underline dark:text-gray-100" />
+                <div onClick={onToggleNav}>
+                  <CMSLink key={i} {...link} className="font-nunito font-p-1 font-medium text-slate-600 hover:text-black hover:underline dark:text-gray-100" />
+                </div>
               </div>
             )
           })}
