@@ -124,19 +124,19 @@ const serialize = (children: Children): React.ReactNode[] => children.map((node,
       );
     case 'ul':
       return (
-        <ul key={i}>
+        <ul key={i} className="list-disc pl-10">
           {serialize(node.children)}
         </ul>
       );
     case 'ol':
       return (
-        <ol key={i}>
+        <ol key={i} className="list-decimal pl-10">
           {serialize(node.children)}
         </ol>
       );
     case 'li':
       return (
-        <li key={i}>
+        <li key={i} className="my-2">
           {serialize(node.children)}
         </li>
       );
@@ -171,7 +171,7 @@ const serialize = (children: Children): React.ReactNode[] => children.map((node,
 
     default:
       return (
-        <p key={i}>
+        <p key={i} className="my-2">
           {serialize(node.children)}
         </p>
       );

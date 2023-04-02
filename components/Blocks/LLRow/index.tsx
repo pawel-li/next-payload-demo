@@ -2,12 +2,12 @@ import { Page } from '../../../payload-types';
 import React from 'react';
 import { SectionContainer } from '../../SectionContainer';
 import RichText from '../../RichText';
-import { CMSLink } from '../../Link';
 import Link from 'next/link';
 
 
 type Props = {
   slug: 'llRowBlock',
+  Title?: string,
   cards: {
     Title: string;
     richText: {
@@ -32,10 +32,11 @@ type Props = {
   blockName?: string;
   blockType: 'llRowBlock';
 }
-export const LLRowBlock: React.FC<Props> = ({ cards }) => {
+export const LLRowBlock: React.FC<Props> = ({ cards, Title }) => {
   console.log('cards', cards);
   return (
     <SectionContainer>
+        {Title ? <h1 className="mt-6 font-sans text-4xl font-medium tracking-tight text-black dark:text-white">{Title}</h1> : null}
       <div className="flex flex-col md:flex-row">
         {cards.map((card, i) =>
           <div key={i} className={`${i + 1 === cards.length ? 'pr-0' : 'md:pr-6'}`}>

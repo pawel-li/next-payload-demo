@@ -9,6 +9,11 @@ export const LLRow: Block = {
   },
   fields: [
     {
+      name: 'Title',
+      type: 'text',
+      required: false
+    },
+    {
       type: 'row', // required
       fields: [ // required
         {
