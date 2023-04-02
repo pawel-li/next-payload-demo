@@ -134,6 +134,7 @@ export interface Page {
         blockType: 'llSliderBlock';
       }
       | {
+        title?: string,
         cards: {
           title: string;
           richText: {
