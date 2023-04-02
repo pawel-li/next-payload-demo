@@ -33,7 +33,7 @@ type Props = {
   blockType: 'llRowBlock';
 }
 export const LLRowBlock: React.FC<Props> = ({ cards, Title }) => {
-  console.log('cards', cards);
+  console.log('cards', cards, Title);
   return (
     <SectionContainer>
         {Title ? <h1 className="mt-6 font-sans text-4xl font-medium tracking-tight text-black dark:text-white">{Title}</h1> : null}
