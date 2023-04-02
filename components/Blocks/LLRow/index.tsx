@@ -52,7 +52,7 @@ export const LLRowBlock: React.FC<Props> = ({ cards }) => {
                   const href = (link.link.type === 'reference' && typeof link.link.reference?.value === 'object' && link.link.reference.value.slug) ? `/${link.link.reference.value.slug}` : link.link.url;
                   const newTabProps = link.link.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {};
                   return (
-                    <Link href={href} className="inline-flex items-center py-3 text-center text-sm text-lg font-medium text-black transition ease-in-out hover:-translate-y-1 hover:underline dark:text-white lg:text-xl"
+                    <Link href={href} key={i} className="inline-flex items-center py-3 text-center text-sm text-lg font-medium text-black transition ease-in-out hover:-translate-y-1 hover:underline dark:text-white lg:text-xl"
                     {...newTabProps}>
                         {link.link.label}
                         <svg
