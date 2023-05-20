@@ -16,6 +16,7 @@ export interface Config {
   };
 }
 export interface Page {
+  breadcrumbs: any;
   id: string;
   title?: string;
   layout: (
@@ -133,7 +134,16 @@ export interface Page {
         blockName?: string;
         blockType: 'llSliderBlock';
       }
-      | {
+      |  {
+        clients: {
+          name: string;
+          url: string;
+          media: Media;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'llClientBlock';
+      } | {
         Title?: string,
         cards: {
           title: string;

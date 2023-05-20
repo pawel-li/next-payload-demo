@@ -9,6 +9,7 @@ import { CallToActionBlock } from './CallToAction';
 import { ContentBlock } from './Content';
 import { LLRowBlock } from './LLRow';
 import { LLSliderBlock } from './LLSlider';
+import { LLClientBlock } from './LLClient';
 import { MediaBlock } from './MediaBlock';
 
 const blockComponents = {
@@ -16,6 +17,7 @@ const blockComponents = {
   content: ContentBlock,
   mediaBlock: MediaBlock,
   llSliderBlock: LLSliderBlock,
+  llClientBlock: LLClientBlock,
   llRowBlock: LLRowBlock
 }
 

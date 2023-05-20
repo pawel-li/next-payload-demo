@@ -13,11 +13,11 @@ export const slugField: Slug = (fieldToUse = 'title', overrides) => deepMerge<Fi
     admin: {
       position: 'sidebar',
     },
-    hooks: {
-      beforeValidate: [
-        formatSlug(fieldToUse),
-      ],
-    },
+    // hooks: {
+    //   beforeValidate: [
+    //     formatSlug(fieldToUse),
+    //   ],
+    // },
   },
   overrides || {},
 );

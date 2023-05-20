@@ -40,7 +40,8 @@ export const Image: React.FC<Props> = (props) => {
 
     let filename = fullFilename;
 
-    src = `https://${process.env.NEXT_PUBLIC_S3_ENDPOINT}/${process.env.NEXT_PUBLIC_S3_BUCKET}/${filename}`
+    src = resource.url || '';
+    //https://s3.eu-central-1.amazonaws.com/leszek-payload/3.png
   }
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes

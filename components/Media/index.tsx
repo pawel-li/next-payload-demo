@@ -26,6 +26,7 @@ export const Media: React.FC<Props> = (props) => {
     resource,
     htmlElement = 'div'
   } = props;
+  console.log(props);
 
   const isVideo = typeof resource !== 'string' && resource?.mimeType?.includes('video');
   const Tag = htmlElement as ElementType || Fragment;

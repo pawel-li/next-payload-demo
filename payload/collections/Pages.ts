@@ -4,6 +4,7 @@ import { CallToAction } from '../blocks/CallToAction';
 import { Content } from '../blocks/Content';
 import { LLRow } from '../blocks/LLRow';
 import { LLSlider } from '../blocks/LLSlider';
+import { LLClient } from '../blocks/LLClient';
 import { MediaBlock } from '../blocks/Media';
 import { slugField } from '../fields/slug';
 import { regenerateStaticPage } from '../utilities/regenerateStaticPage';
@@ -50,6 +51,7 @@ export const Pages: CollectionConfig = {
                 Content,
                 MediaBlock,
                 LLSlider,
+                LLClient,
                 LLRow
               ]
             }

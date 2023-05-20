@@ -14,8 +14,9 @@ const nextConfig = withPayload({
       'localhost',
       'next-payload-demo-2dafcxu2f-pawel-li.vercel.app',
       'https://nextjs-vercel.payloadcms.com',
-      // process.env.NEXT_PUBLIC_APP_URL,
-      // process.env.NEXT_PUBLIC_S3_ENDPOINT
+      'leszek-payload.s3.eu-central-1.amazonaws.com',
+      process.env.NEXT_PUBLIC_APP_URL,
+      process.env.NEXT_PUBLIC_S3_ENDPOINT
     ],
   },
 }, {

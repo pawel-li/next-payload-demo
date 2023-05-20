@@ -6,6 +6,8 @@ import { AdminBar } from '../../../components/AdminBar';
 
 const Page = async ({ params: { slug } }) => {
   const payload = await getPayload();
+  console.log('slug', slug)
+
 
   const pages = await payload.find({
     collection: 'pages',
@@ -15,6 +17,7 @@ const Page = async ({ params: { slug } }) => {
       },
     }
   });
+
 
   const page = pages.docs[0];
 
