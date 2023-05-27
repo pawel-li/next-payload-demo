@@ -31,7 +31,7 @@ type Props = {
 export const CallToActionBlock: React.FC<Props> = ({ Title, links, richText }) => {
   return (
     <SectionContainer>
-      <div className="my-10 md:my-20">
+      <div className="lg:my-10">
         <h1 className={`mt-6 font-sans text-4xl font-medium tracking-tight text-black dark:text-white`}>
           {Title}
         </h1>

@@ -17,7 +17,7 @@ type Props = {
 export const LLClientBlock: React.FC<Props> = ({ clients }) => {
   return (
     <SectionContainer>
-      <div className="my-10 md:my-20">
+      <div className="lg:my-10">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
       {clients.map((client, i) => <Fragment key={i}><Media resource={client.media} className='rounded border p-4 flex items-center justify-center h-48' /></Fragment> )}
     </div>

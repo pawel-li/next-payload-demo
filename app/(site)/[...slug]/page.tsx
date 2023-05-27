@@ -4,16 +4,16 @@ import getPayload from '../../../payload';
 import Blocks from '../../../components/Blocks';
 import { AdminBar } from '../../../components/AdminBar';
 
-const Page = async ({ params: { slug } }) => {
+const Page = async ({ params }) => {
   const payload = await getPayload();
-  console.log('slug', slug)
+  console.log('slug', params)
 
 
   const pages = await payload.find({
     collection: 'pages',
     where: {
       slug: {
-        equals: slug || 'home',
+        equals: params.slug?.join('/') || 'home',
       },
     }
   });

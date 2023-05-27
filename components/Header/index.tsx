@@ -27,7 +27,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ children, navItems }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between font-nunito">
+    <div className="flex flex-col justify-between font-nunito mb-20 md:mb-0">
       <header className={`transition-all ease-in-out duration-500 fixed  ${stickyClass} top-0 z-50 flex w-full justify-center bg-white/75 dark:bg-neutral-900/95 backdrop-blur-md`}>
         <SectionContainer>
           <div className='flex justify-between items-center w-full'>

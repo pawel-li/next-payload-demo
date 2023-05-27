@@ -40,7 +40,7 @@ export const LLRowBlock: React.FC<Props> = ({ cards, Title }) => {
       <div className="flex flex-col md:flex-row">
         {cards.map((card, i) =>
           <div key={i} className={`${i + 1 === cards.length ? 'pr-0' : 'md:pr-6'}`}>
-            <div className="my-10 md:my-20">
+            <div className="lg:my-10">
               <h1 className={`mt-6 font-sans text-3xl md:text-4xl font-medium tracking-tight text-black dark:text-white`}>
                 {card.Title}
               </h1>
