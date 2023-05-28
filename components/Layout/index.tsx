@@ -2,12 +2,13 @@
 
 import { GridProvider } from '@faceless-ui/css-grid';
 import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
 import { MainMenu } from '../../payload-types';
 import cssVariables from '../../cssVariables';
 import '../../css/app.scss';
+import {usePathname, useSearchParams} from 'next/navigation'
 
 type Props = {
   mainMenu: MainMenu
@@ -18,6 +19,12 @@ const Layout = ({
   mainMenu,
   children,
 }: Props): React.ReactElement => {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+   useEffect(() => {
+     window.scrollTo(0,0);
+   }, [pathname, searchParams])
+
   return (
     <div className="flex h-screen flex-col justify-between font-nunito">
     <React.Fragment>
